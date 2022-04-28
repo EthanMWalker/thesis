@@ -998,14 +998,15 @@ Specializing $(F,\mathbb{R}^4)$ over the set $S=\{2,3\}$, as in Example \ref{ex:
 which has the graph of interactions shown in Figure~\ref{fig:spec_ex}(b).
 Setting $\varepsilon=.01$ $\alpha=.12$, $\gamma=.9$ and $\delta=-.4$ gives the time series shown in Figure \ref{fig:chaotic}(d) for the given initial condition.
 
-Here the restriction $(F_S,\mathbb{R}^2)$ given by
+Note that the restriction $(F_S,\mathbb{R}^2)$ given by
 \begin{equation*}
     F_S\left(\begin{bmatrix} x_2 \\ x_3 \end{bmatrix}\right) = \begin{bmatrix} .9x_2 + .4x_3 \\ -.4x_2 + .9x_3 \end{bmatrix} = \begin{bmatrix} .9 & .4 \\ -.4 & .9 \end{bmatrix}\begin{bmatrix} x_2 \\ x_3 \end{bmatrix}
 \end{equation*}
 has a globally attracting fixed point as the matrix in this equation has a spectral radius strictly less than one.
 Thus, part (c) of Theorem \ref{thm:sync} implies that all copies of this subnetwork with the same in-branch will synchronize asymptotically no matter the initial condition.
-These are the pairs $\bar{x}_{2.1}$, $\bar{x}_{2.2}$; $\bar{x}_{2.3}$, $\bar{x}_{2.4}$; $\bar{x}_{3.1}$, $\bar{x}_{3.2}$; and $\bar{x}_{3.3}$, $\bar{x}_{3.4}$, {which exhibits chaotic synchronization, as can be seen in Figure \ref{fig:chaotic} (c) and (d).
-In fact, two of those pairs, $\bar{x}_{3.3}$, $\bar{x}_{3.4}$; and $\bar{x}_{2.1}$, $\bar{x}_{2.2}$, also synchronize although this is not guaranteed by the theorem and it is an open question as to why this is the case.} (This same analysis can be done for Example \ref{ex:spec} with similar results.)
+These are the pairs $\bar{x}_{2.1}$, $\bar{x}_{2.2}$; $\bar{x}_{2.3}$, $\bar{x}_{2.4}$; $\bar{x}_{3.1}$, $\bar{x}_{3.2}$; and $\bar{x}_{3.3}$, $\bar{x}_{3.4}$, which synchronize asymptotically irrespective of the system's initial condition, as can be seen in Figure \ref{fig:chaotic} (right).
+In fact, two of those pairs, $\bar{x}_{3.3}$, $\bar{x}_{3.4}$; and $\bar{x}_{2.1}$, $\bar{x}_{2.2}$, also synchronize although this is not guaranteed by the theorem.
+(This same analysis can be done for Example \ref{ex:spec} with similar results.)
  
 %the time series of this specialized system is shown in Figure~\ref{fig:chaotic} (right). Here we can see that two of the specialized components synchronize with each other. Notice that it is not the nodes within the specialized components, but analogous nodes between the components that are synchronizing as described in Remark~\ref{rem:coms}. This is the same type of synchronization that we see in Example~\ref{ex:spec}, however the resulting community structure in this example is slightly different. In Example~\ref{ex:spec} we have four synchronizing communities, each of those being a pair of nodes. In this case we have three synchronizing communities, because two of the communities appear to synchronize with each other. The compelling idea in this example is that the specialized components are being driven by a chaotic dynamical system, yet we see synchronization. In some sense, we have two systems that are exhibiting chaotic behavior, with different initial conditions, that converge to some attracting orbit.
 
@@ -1023,7 +1024,7 @@ To illustrate how this might be accomplished we will examine a model of a traffi
 Specifically, in this example we will specialize the most active vertex in the network.
 
 The network we have constructed is fairly simple, shown in Figure \ref{fig:jackson_graph_1}.
-In a Jackson traffic network, the traffic at each vertex is described by the following equation $\mathbf{x}_i = \gamma_i + \sim_{j}P_{ij}\mathbf{x}_j$, where $P_{ij}$ is the probability of transition from vertex $j$ to vertex $i$, and $\gamma_i$ is the external intput to vertex $i$.
+In a Jackson traffic network, the traffic at each vertex is described by the following equation $\mathbf{x}_i = \gamma_i + \sum_{j}P_{ij}\mathbf{x}_j$, where $P_{ij}$ is the probability of transition from vertex $j$ to vertex $i$, and $\gamma_i$ is the external input to vertex $i$.
 Because $P_{ij}$ describes a probability of transitioning from state $j$ to state $i$, the column sums of $P$ must be less than or equal to 1, so $P$ is column substochastic.
 In our example model we have 
 \begin{align*}
@@ -1036,7 +1037,7 @@ In our example model we have
     \end{bmatrix},
     \gamma = \begin{bmatrix} 50 \\ 30 \\ 40 \\ 30 \end{bmatrix}.
 \end{align*}
-Supposing that this network models traffic, we can see from Figure \ref{fig:jackson_network_1} that vertex 4 sees the most traffic, so we can specialize the network on vertex 4. This specialization leads to the following $\bar{P}$ matrix is $\bar{\gamma}$
+Supposing that this network models traffic, we can see from Figure \ref{fig:jackson_network_1} that vertex 4 sees the most traffic, so we can specialize the network on vertex 4. This specialization leads to the following $\bar{P}$ matrix and $\bar{\gamma}$
 \begin{align*}
     \bar{P} = 
     \begin{bmatrix} 
@@ -1092,11 +1093,11 @@ We can also see the resulting network dynamics in Figure \ref{fig:jackson_networ
        \label{fig:jackson_network}
 \end{figure}
 
-Applying specialization to our network according to the rules outlined in this work, we can see that the network is no longer a jackson network as the columns of $\bar{P}$ are occasionally greater than 1, do it is no longer column substochastic.
+Applying specialization to our network according to the rules outlined in this work, we can see that the network is no longer a Jackson network as the columns of $\bar{P}$ are occasionally greater than 1, so it is no longer column substochastic.
 
 Because of this issue, we propose an addition to the specialization algorithm.
 We examine one branch of the specialization process. 
-We have a specialized branch $\beta = \{i, e_{i\bar{k}}, G_S, e_{\bar{\ell}j}, j \}$, upon specialization, we set $\bar{P}_{\bar{k}i} = P_{ki}P_{j\ell}/\sum_{e_{st}\in E_{S^{\text{out}}}}P_{st}$ and $P_{j\bar{\ell}} = P_{\ell j}$.
+We have a specialized branch $\beta = \{i, e_{i\bar{k}}, G_S, e_{\bar{\ell}j}, j \}$, upon specialization, we set $\bar{P}_{\bar{k}i} = P_{ki}P_{j\ell}/\sum_{e_{st}\in E_{S}^{{\text{out}}}}P_{st}$ and $P_{j\bar{\ell}} = P_{\ell j}$.
 We will also set $\bar{\gamma}_{\bar{k}} = \gamma_{k}/|B_S(G)|$.
 Applying this extended process, specializing on the same set results in the following network
 \begin{align*}
@@ -1117,7 +1118,7 @@ and we can see the resulting dynamics in Figure \ref{fig:jackson_network_fixed}.
     \centering
     \includegraphics[width=.75\textwidth]{images/jackson_network_2_fixed.pdf}
     \caption{
-        After we extend the specialization algorithm to allowed network dynamics to affect it, we see what can be interpreted as significantly decreased congestion on our model traffic network.
+        After we extend the specialization algorithm to allow network dynamics to affect it, we see what can be interpreted as significantly decreased congestion on our model traffic network.
     }
     \label{fig:jackson_network_fixed}
 \end{figure}
@@ -1126,6 +1127,7 @@ Note that each of the column sums are less than or equal to 1, so the properties
 This method further extends how we allow network dynamics to influence specialization by altering the functions in our dynamical system.
 Other similar extensions may be examined, adapting the method to the type of network being considered.
 In the case of Jackson networks, this product described is natural because of the properties of probabilities, another model may lead to another method natural to that model.
+
 In real world networks there is a complex interplay between network dynamics and network growth.
 The alterations and extensions to the specialization model we have explored in this chapter may allow the model to capture more real world phenomena. 
 It may also empower the model with more explanatory power.
@@ -1155,71 +1157,65 @@ Last, we note that the model described in this paper is not a fully integrated m
 % \bibliography{thesis}
 
 \begin{thebibliography}{99}
-\bibitem{1} J. Hasty, A. Hoffmann, and S. Golden, Systems biology of cellular rhythms: from cacophony to symphony. \textit{Current opinion in genetics and development} {20(6), 571-573, (2010).}
+    \bibitem{11} A. B. Siddique, L. Pecora, J. D. Hart, and F. Sorrentino, Symmetry- and input-cluster synchronization in networks. \textit{Phys. Rev. E} 97, 042217, (2018).
+    
+    \bibitem{5} A. Ghaffarizadeh, N. S. Flann, and G. J. Podgorski, Multistable switches and their role in cellular differentiation networks. \textit{BMC Bioinformatics},PMID: 25078021 (2014).
+    
+    \bibitem{14} C. Coux, R. Rader, I. Bartomeus, and J. M. Tylianakis, Linking species functional roles to their network roles. \textit{Ecology letters}, Volume 19(7), (2016).
+    
+    \bibitem{Esp10} C. Espinosa-Soto, A. Wagner, Specialization Can Drive the Evolution of Modularity. PLoS ComputBiol, 6(3), (2010).
+    
+    \bibitem{Godsil01} C. Godsil and G.F. Royle, Algebraic Graph Theory. \textit{Graduate Texts in Mathematics}. Springer New York, (2001).
+    
+    \bibitem{6} D. A. Oyarzún, M. Chaves, M. Hoff-Hoffmeyer-Zlotnik, Multistability and oscillations in genetic control of metabolism, \textit{Journal of Theoretical Biology}, Volume 295, {139-153}, (2012).
+    
+    \bibitem{Povinelli95} D. J. Povinelli, and T. M. Preuss, Theory of mind: evolutionary history of a cognitive specialization. \textit{Trends in Neurosciences}, 18(9), 418-424, (1995).
+    
+    \bibitem{Lund21} D. Lund, J. Drapeau, B. Webb, Fourier decompositions of graphs with symmetries and equitable partitions, \textit{Linear Algebra and its Applications}, Vol. 627, {199-226}, (2021).
+    
+    \bibitem{Herskowitz89} I. Herskowitz, A regulatory hierarchy for cell specialization in yeast. \textit{Nature}, 342(6251), 749-757, (1989).
+    
+    \bibitem{3} J. Boiko, I. Pyatin, O. Eromenko, O. Barabash, Methodology for Assessing Synchronization Conditions in Telecommunication Devices, \textit{Advances in Science, Technology and Engineering Systems Journal}, vol. 5, no. 2,{320-327, (2020)}
+    
+    \bibitem{Fan05} J. Fan and X. Wang, On synchronization in scale-free dynamical networks. \textit{Physica A-statistical Mechanics and Its Applications}, Vol. 349, issue 3, {443-451}, (2005).
+    
+    \bibitem{1} J. Hasty, A. Hoffmann, and S. Golden, Systems biology of cellular rhythms: from cacophony to symphony. \textit{Current opinion in genetics and development} {20(6), 571-573, (2010).}
+    
+    \bibitem{13} J. Scripps, T. Pang-Ning, and A.-H. Esfahanian, Node Roles and Community Structure in Networks, \textit{Association for Computing Machinery} New York, NY, USA, (2007).
+    
+    \bibitem{Stelling02} J. Stelling, S. Klamt, K. Bettenbrock, S. Schuster, and E. D. Gilles, Metabolic Network Structure Determines Key Aspects of Functionality and Regulation.\textit{Nature}, {420, 190-193}, (2002).
+    
+    \bibitem{8} L. A. Bunimovich, D. C. Smith, and B. Z. Webb, Specialization Models of Network Growth, \textit{Journal of Complex Networks}, Volume 7, Issue 3, {375-392}, (2019).
+    
+    \bibitem{Bunimovich20} L. Bunimovich, D. J. Passey, D. Smith, and B. Webb, Spectral and Dynamic Consequences of Network Specialization. International Journal of Bifurcation and Chaos, 30(06), 2050091, (2020).
+    
+    \bibitem{2} L. Glass, Synchronization and rhythmic processes in physiology. \textit{Nature} {410, 277-284, (2001),}
+    
+    \bibitem{15} L. Peel, Active discovery of network roles for predicting the classes of network nodes. \textit{Journal of Complex Networks}, {3(3), 431-449}, (2015).
 
-\bibitem{2} L. Glass, Synchronization and rhythmic processes in physiology. \textit{Nature} {410, 277-284, (2001),}
+    \bibitem{10} L. V. Gambuzza and M. Frasca, A criterion for stability of cluster synchronization in networks with external equitable partitions. \textit{Automatica}, Volume 100, {212-218}, (2019).
+    
+    \bibitem{Cohen83} M. A. Cohen and S. Grossberg, Absolute stability of global pattern formation and parallel memory storage by competitive neural networks. \textit{IEEE Transactions on Systems, Man, and Cybernetics}, Vol. SMC-13, No. 5, {815-826}, (1983).
 
-\bibitem{3} J. Boiko, I. Pyatin, O. Eromenko, O. Barabash, Methodology for Assessing Synchronization Conditions in Telecommunication Devices, \textit{Advances in Science, Technology and Engineering Systems Journal}, vol. 5, no. 2,{320-327, (2020)}
+    \bibitem{12} M. A. D. Aguiar and A. P. S. Dias, Synchronization and equitable partitions in weighted networks. \textit{Chaos} 28, {073105} (2018).
 
-\bibitem{4} S. Bregni, Synchronization of Digital Telecommunications Networks. \textit{John Wiley and Sons}, Ltd, {171-179}, (2002).
+    \bibitem{7} M. Newman, A.-L. Barabási, and D. J. Watts, The Structure and Dynamics of Networks, \textit{Princeton: Princeton University Press}, (2011). %{167-182}, 
 
-\bibitem{5} A. Ghaffarizadeh, N. S. Flann, and G. J. Podgorski, Multistable switches and their role in cellular differentiation networks. \textit{BMC Bioinformatics},PMID: 25078021 (2014).
+    \bibitem{Newman10} M. Newman, Networks: An Introduction, \textit{Oxford University Press} {304-340, 494-568, 434-493, 108-109}, (2010).
 
-\bibitem{6} D. A. Oyarzún, M. Chaves, M. Hoff-Hoffmeyer-Zlotnik, Multistability and oscillations in genetic control of metabolism, \textit{Journal of Theoretical Biology}, Volume 295, {139-153}, (2012).
+    \bibitem{Nikolic17} N. Nikolic, F. Schreiber, A. Dal Co, D. J. Kiviet, T. Bergmiller, S. Littmann, M. Kuypers, and M. Ackermann, Cell-to-cell variation and specialization in sugar metabolism in clonal bacterial populations. \textit{PLOS Genetics}, 13(12), 1-24, (2017).
+    
+    \bibitem{Prulzj07} N. Przulj, Biological Network Comparison using Graphlet Degree Distribution. \textit{Bioinformatics}, Vol. 23, Issue 2, {177-183} (2007).
 
-\bibitem{7} M. Newman, A.-L. Barabási, and D. J. Watts, The Structure and Dynamics of Networks, \textit{Princeton: Princeton University Press}, (2011). %{167-182}, 
+    \bibitem{Sporns13} O. Sporns, Network attributes for segregation and integration in the human brain. \textit{Curr. Opin. Neurobiol.} PMID: 23294553, {162-171}, (2013).
 
-\bibitem{Newman10} M. Newman, Networks: An Introduction, \textit{Oxford University Press} {304-340, 494-568, 434-493, 108-109}, (2010).
+    \bibitem{Salz01} R. J. Salz and D. K. Loomis, and K. L. Finn, Development and Validation of a Specialization Index and Testing of Specialization Theory. \textit{Human Dimensions of Wildlife}, 6(4), 239-258, (2001).
 
-\bibitem{8} L. A. Bunimovich, D. C. Smith, and B. Z. Webb, Specialization Models of Network Growth, \textit{Journal of Complex Networks}, Volume 7, Issue 3, {375-392}, (2019).
+    \bibitem{9} R. V. Solé V and S. Valverde, Spontaneous emergence of modularity in cellular networks. \textit{J. R. Soc. Interface} 5129-133, {129-133}, (2008).
 
-\bibitem{Bunimovich20} L. Bunimovich, D. J. Passey, D. Smith, and B. Webb, Spectral and Dynamic Consequences of Network Specialization. International Journal of Bifurcation and Chaos, 30(06), 2050091, (2020).
+    \bibitem{4} S. Bregni, Synchronization of Digital Telecommunications Networks. \textit{John Wiley and Sons}, Ltd, {171-179}, (2002).
 
-\bibitem{10.1} {A. Kulig, S.  Dro\ifmmode \dot{z}\else \.{z}\fi{}d\ifmmode \dot{z}\else \.{z}\fi{}, J. Kwapien, and P. O\ifmmode \acute{s}\else \'{s}\fi{}wi\ifmmode \mbox{\c{e}}\else \c{e}\fi{}cimka, Modeling the average shortest-path length in growth of word-adjacency networks. Phys. Rev. E, Volume 91, Issue 3, 032810, (2015).}
-
-\bibitem{Sporns13} O. Sporns, Network attributes for segregation and integration in the human brain. \textit{Curr. Opin. Neurobiol.} PMID: 23294553, {162-171}, (2013).
-
-\bibitem{9} R. V. Solé V and S. Valverde, Spontaneous emergence of modularity in cellular networks. \textit{J. R. Soc. Interface} 5129-133, {129-133}, (2008).
-
-\bibitem{Esp10} C. Espinosa-Soto, A. Wagner, Specialization Can Drive the Evolution of Modularity. PLoS ComputBiol, 6(3), (2010).
-
-\bibitem{10} L. V. Gambuzza and M. Frasca, A criterion for stability of cluster synchronization in networks with external equitable partitions. \textit{Automatica}, Volume 100, {212-218}, (2019).
-
-\bibitem{11} A. B. Siddique, L. Pecora, J. D. Hart, and F. Sorrentino, Symmetry- and input-cluster synchronization in networks. \textit{Phys. Rev. E} 97, 042217, (2018).
-
-\bibitem{12} M. A. D. Aguiar and A. P. S. Dias, Synchronization and equitable partitions in weighted networks. \textit{Chaos} 28, {073105} (2018).
-
-\bibitem{13} J. Scripps, T. Pang-Ning, and A.-H. Esfahanian, Node Roles and Community Structure in Networks, \textit{Association for Computing Machinery} New York, NY, USA, (2007).
-
-\bibitem{14} C. Coux, R. Rader, I. Bartomeus, and J. M. Tylianakis, Linking species functional roles to their network roles. \textit{Ecology letters}, Volume 19(7), (2016).
-
-\bibitem{15} L. Peel, Active discovery of network roles for predicting the classes of network nodes. \textit{Journal of Complex Networks}, {3(3), 431-449}, (2015).
-
-\bibitem{Stelling02} J. Stelling, S. Klamt, K. Bettenbrock, S. Schuster, and E. D. Gilles, Metabolic Network Structure Determines Key Aspects of Functionality and Regulation.\textit{Nature}, {420, 190-193}, (2002).
-
-% \bibitem{} \textit{ACM Transactions on Knowledge Discovery from DataVolume}, 16Issue (2022) Article No.: 28pp 1-24https://doi.org/10.1145/3464390
-
-\bibitem{Cohen83} M. A. Cohen and S. Grossberg, Absolute stability of global pattern formation and parallel memory storage by competitive neural networks. \textit{IEEE Transactions on Systems, Man, and Cybernetics}, Vol. SMC-13, No. 5, {815-826}, (1983).
-
-\bibitem{Fan05} J. Fan and X. Wang, On synchronization in scale-free dynamical networks. \textit{Physica A-statistical Mechanics and Its Applications}, Vol. 349, issue 3, {443-451}, (2005).
-
-\bibitem{Wang02} X. F. Wang and G. Chen, Synchronization in scale-free dynamical networks: robustness and fragility. \textit{IEEE Transactions on Circuits and Systems I: Fundamental Theory and Applications}, Vol. 49, No. 1, {54-62}, (2002).
-
-\bibitem{Prulzj07} N. Przulj, Biological Network Comparison using Graphlet Degree Distribution. \textit{Bioinformatics}, Vol. 23, Issue 2, {177-183} (2007).
-
-\bibitem{Herskowitz89} I. Herskowitz, A regulatory hierarchy for cell specialization in yeast. \textit{Nature}, 342(6251), 749-757, (1989).
-
-\bibitem{Nikolic17} N. Nikolic, F. Schreiber, A. Dal Co, D. J. Kiviet, T. Bergmiller, S. Littmann, M. Kuypers, and M. Ackermann, Cell-to-cell variation and specialization in sugar metabolism in clonal bacterial populations. \textit{PLOS Genetics}, 13(12), 1-24, (2017).
-
-\bibitem{Povinelli95} D. J. Povinelli, and T. M. Preuss, Theory of mind: evolutionary history of a cognitive specialization. \textit{Trends in Neurosciences}, 18(9), 418-424, (1995).
-
-\bibitem{Salz01} R. J. Salz and D. K. Loomis, and K. L. Finn, Development and Validation of a Specialization Index and Testing of Specialization Theory. \textit{Human Dimensions of Wildlife}, 6(4), 239-258, (2001).
-
-\bibitem{Godsil01} C. Godsil and G.F. Royle, Algebraic Graph Theory. \textit{Graduate Texts in Mathematics}. Springer New York, (2001).
-
-\bibitem{Lund21} D. Lund, J. Drapeau, B. Webb, Fourier decompositions of graphs with symmetries and equitable partitions, \textit{Linear Algebra and its Applications}, Vol. 627, {199-226}, (2021).
-
-\bibitem{Cao2020} {H. -J. Li, Z. Bu, Z. Wang and J. Cao, Dynamical Clustering in Electronic Commerce Systems via Optimization and Leadership Expansion, \textit{IEEE Transactions on Industrial Informatics}, vol. 16, no. 8, pp. 5327-5334, (2020).}
+    \bibitem{Wang02} X. F. Wang and G. Chen, Synchronization in scale-free dynamical networks: robustness and fragility. \textit{IEEE Transactions on Circuits and Systems I: Fundamental Theory and Applications}, Vol. 49, No. 1, {54-62}, (2002).
 \end{thebibliography}
 
 %% If you want to include an index, this prints the index at this location. You must 
@@ -1227,4 +1223,3 @@ Last, we note that the model described in this paper is not a fully integrated m
 % \printindex
 
 \end{document}
-

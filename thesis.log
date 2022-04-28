@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.4.26)  27 APR 2022 19:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.4.26)  27 APR 2022 23:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -492,22 +492,22 @@ Chapter 5.
 <images/jackson_graph_1.pdf, id=774, 260.975pt x 132.495pt>
 File: images/jackson_graph_1.pdf Graphic file (type pdf)
 <use images/jackson_graph_1.pdf>
-Package pdftex.def Info: images/jackson_graph_1.pdf  used on input line 1059.
+Package pdftex.def Info: images/jackson_graph_1.pdf  used on input line 1060.
 (pdftex.def)             Requested size: 211.3883pt x 107.32236pt.
 <images/jackson_graph_2.pdf, id=775, 260.975pt x 219.82124pt>
 File: images/jackson_graph_2.pdf Graphic file (type pdf)
 <use images/jackson_graph_2.pdf>
-Package pdftex.def Info: images/jackson_graph_2.pdf  used on input line 1066.
+Package pdftex.def Info: images/jackson_graph_2.pdf  used on input line 1067.
 (pdftex.def)             Requested size: 211.3883pt x 178.05757pt.
 <images/jackson_network_1.pdf, id=776, 433.62pt x 289.08pt>
 File: images/jackson_network_1.pdf Graphic file (type pdf)
 <use images/jackson_network_1.pdf>
-Package pdftex.def Info: images/jackson_network_1.pdf  used on input line 1079.
+Package pdftex.def Info: images/jackson_network_1.pdf  used on input line 1080.
 (pdftex.def)             Requested size: 211.3883pt x 140.92703pt.
 <images/jackson_network_2.pdf, id=777, 433.62pt x 289.08pt>
 File: images/jackson_network_2.pdf Graphic file (type pdf)
 <use images/jackson_network_2.pdf>
-Package pdftex.def Info: images/jackson_network_2.pdf  used on input line 1086.
+Package pdftex.def Info: images/jackson_network_2.pdf  used on input line 1087.
 (pdftex.def)             Requested size: 211.3883pt x 140.92703pt.
  [29 </home/ethan/Documents/Thesis/images/jackson_graph_1.pdf> </home/ethan/Documents/Thesis/images/jackson_graph_2.pdf
 
@@ -516,34 +516,34 @@ pdfTeX warning: pdflatex (file /home/ethan/Documents/Thesis/images/jackson_graph
 <images/jackson_network_2_fixed.pdf, id=871, 433.62pt x 289.08pt>
 File: images/jackson_network_2_fixed.pdf Graphic file (type pdf)
 <use images/jackson_network_2_fixed.pdf>
-Package pdftex.def Info: images/jackson_network_2_fixed.pdf  used on input line 1118.
+Package pdftex.def Info: images/jackson_network_2_fixed.pdf  used on input line 1119.
 (pdftex.def)             Requested size: 352.31624pt x 234.89014pt.
  [30 </home/ethan/Documents/Thesis/images/jackson_network_2_fixed.pdf>]
 Chapter 6.
 [31] [32] [33] [34]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1229.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1225.
  [35]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1229.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1225.
  (/home/ethan/Documents/Thesis/thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1229.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1229.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1225.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1225.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 84D1339280DCEB74683EB32B191D9B10;1365.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1229.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1225.
  ) 
 Here is how much of TeX's memory you used:
- 8366 strings out of 481239
- 127253 string characters out of 5920377
- 410676 words of memory out of 5000000
- 23308 multiletter control sequences out of 15000+600000
+ 8359 strings out of 481239
+ 127193 string characters out of 5920377
+ 410613 words of memory out of 5000000
+ 23303 multiletter control sequences out of 15000+600000
  541465 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,15n,42p,1768b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /home/ethan/Documents/Thesis/thesis.pdf (42 pages, 900915 bytes).
+Output written on /home/ethan/Documents/Thesis/thesis.pdf (42 pages, 900208 bytes).
 PDF statistics:
- 1024 PDF objects out of 1200 (max. 8388607)
- 691 compressed objects within 7 object streams
- 137 named destinations out of 1000 (max. 500000)
+ 1022 PDF objects out of 1200 (max. 8388607)
+ 689 compressed objects within 7 object streams
+ 135 named destinations out of 1000 (max. 500000)
  246 words of extra memory for PDF output out of 10000 (max. 10000000)
 
