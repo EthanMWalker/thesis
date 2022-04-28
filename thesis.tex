@@ -131,7 +131,7 @@ This happens, for instance, in neural and in cellular networks, which become inc
 Similarly, gene regulatory networks can specialize the activity of existing genes to create new types of gene behavior \cite{Esp10}.
 In technological and information networks such as the World-Wide Web, this differentiation of function is also observed and is driven by the need to handle and more efficiently process an increasing amount of information.
 
-In this paper we consider how specialization effects the {dynamics on} a network.
+In this work we consider how specialization effects the {dynamics on} a network.
 Specifically we show how specialization results in clusters of network components that spontaneously synchronize.
 This is caused by the creation of nontrivial equitable partitions (see Theorems \ref{thm:coarse} and \ref{thm:part_conv}), structures which are associated with cluster synchronization in networks \cite{10,11,12}, where the {clusters} are the elements of the equitable partition.
 We also show that these synchronizing clusters inherit their ability to either locally or globally synchronize from the subnetwork from which they are specialized (see Theorem \ref{thm:sync}).
@@ -141,7 +141,7 @@ Rather, the network components in these clusters are interspersed throughout the
 The fact that these components synchronize and also occupy the same relative position in their respective communities suggests that these components  play a similar {role} within their different communities.
 Understanding these network roles is an ongoing area of research {\cite{13,14,15}} and our results suggest that network specialization is a potential mechanism for modeling their creation.
 
-This paper is organized as follows. In Chapter \ref{chapt:net_spec} we introduce the specialization model for both static and dynamical networks, i.e. graphs and dynamical systems with an underlying graph structure, respectively.
+This work is organized as follows. In Chapter \ref{chapt:net_spec} we introduce the specialization model for both static and dynamical networks, i.e. graphs and dynamical systems with an underlying graph structure, respectively.
 In Chapter \ref{chapt:eqp} we describe how equitable partitions are created and preserved by network specializations for graphs (see Theorems \ref{thm:coarse} and \ref{thm:part_conv}, respectively).
 In Chapter \ref{chapt:sync} we extend the results of Chapter \ref{chapt:eqp} to dynamical networks.
 We show that if a dynamical network has an equitable partition then it is possible for the elements of this partition to synchronize (see Theorem \ref{thm:sync_and_eqp}).
@@ -165,7 +165,7 @@ We let $e_{ij}$ denote an edge between vertex $i$ and vertex $j$.
 If the edge is directed then it starts at $i$ and terminates at $j$.
 In terms of the network, if the edge $e_{ij} \in E$ this indicates that the $i^{th}$ network component has some direct influence on or is linked to the $j^{th}$ network component.
 We note that one can consider an undirected edge to be two directed edges: one edge pointing from the first to the second vertex, the other pointing from the second to the first vertex.
-Thus, any graph can then be considered to be a directed graph, i.e. a graph with directed edges, which will be our convention throughout the paper.
+Thus, any graph can then be considered to be a directed graph, i.e. a graph with directed edges, which will be our convention throughout this work.
 
 The adjacency matrix of the graph $G=(V,E)$ is the zero-one matrix $A\in\{0,1\}^{n\times n}$ with entries given by
 \begin{equation}\label{eq:adjacencymatrix}
@@ -237,7 +237,7 @@ However, networks are not only dynamic in this sense but over longer time-scales
 
 As the structure of a network evolves so does the network's ability to route different quantities through its components. 
 That is, the {dynamics on} the network {are} affected by the {dynamics of} the network.
-Addressing this interplay of structural evolution and how it affects the {dynamics on} a network is a major focus of this thesis.
+Addressing this interplay of structural evolution and how it affects the {dynamics on} a network is a major focus of this work.
 As mentioned in the introduction, an issue in addressing this {phenomenon} is that there are many ways in which a network can grow and therefore not surprisingly there are many models of network growth (see, for instance, \cite{Newman10}).
 The one we consider here is the relatively new model first described in \cite{8} and later rigorously analyzed in \cite{Bunimovich20}.
 This is the specialization model of network growth.
@@ -486,7 +486,7 @@ That is, the dynamics of these pairs of network elements {synchronize asymptotic
 Here we note that this synchronization phenomenon occurs between components that are copies of the same vertex.
 However, not all copies of the same component synchronize.
 To understand how and when specialization leads to synchronization we need to understand the specific graph structures that occur via specialization.
-This is the main focus of the following section.
+This is the main focus of the following chapter.
 
 
 \chapter{Equitable Partitions on Graphs and Specialized Graphs}\label{chapt:eqp}
@@ -495,7 +495,7 @@ This is the main focus of the following section.
 
 To understand what causes the synchronization found in Example~\ref{ex:spec}, we need to understand the structures that are created by network specialization.
 The structures we consider are known as equitable partitions, which have been shown to be a necessary condition for network synchronization \cite{11}.
-While equitable partitions are typically defined for undirected graphs, we extend the standard definition of an equitable partition to be applicable to the directed graphs we consider in this paper \cite{Godsil01}.
+While equitable partitions are typically defined for undirected graphs, we extend the standard definition of an equitable partition to be applicable to the directed graphs we consider in this work \cite{Godsil01}.
 
 \begin{definition}\label{def:ep}\textbf{(Equitable Partition)}
 Let $G=(V,E)$ with adjacency matrix $A=A(G)$.
@@ -740,7 +740,7 @@ For instance, for $a$ and $b$ shown in $\bar{G}$ the in-branch of $\tau(a)$ is m
 
 If the specialized set $S$ does not divide an element of a graph's equitable partition the nonspecialized elements of the partition are preserved by Theorem \ref{thm:part_conv}. (We note that the way equitable partitions evolve inside the specialized part of the graph is described by Theorem \ref{thm:coarse}.)  
 
-The main question we consider in the following section is how specialization as a form of network growth effects the dynamics of a network, specifically how equitable partitions form in dynamical networks and how these structures effect the network's dynamics.
+The main question we consider in the following chapter is how specialization as a form of network growth effects the dynamics of a network, specifically how equitable partitions form in dynamical networks and how these structures effect the network's dynamics.
 
 \chapter{Specialization and the Emergence of Cluster Synchronization}\label{chapt:sync}
 In the previous chapter we related network specialization to the formation of nontrivial equitable partitions.
@@ -1137,13 +1137,13 @@ Because it links network growth to dynamics, analysis of networks after speciali
 
 \chapter{Conclusion}\label{chapt:conclusion}
 
-In this paper we consider the interplay of the {dynamics of} and the {dynamics on} a network. We describe how the specialization model, which is used to evolve the structure of a network, leads to the formation of nontrivial equitable partitions. As the elements of these partitions form clusters that can synchronize, this structural growth has a direct impact on the {dynamics on} the network. That is, as opposed to mechanical, gravitational, or other natural forces;  specialization is a topological mechanism that induces spontaneous synchronization in dynamical networks.   
+In this work we consider the interplay of the {dynamics of} and the {dynamics on} a network. We describe how the specialization model, which is used to evolve the structure of a network, leads to the formation of nontrivial equitable partitions. As the elements of these partitions form clusters that can synchronize, this structural growth has a direct impact on the {dynamics on} the network. That is, as opposed to mechanical, gravitational, or other natural forces;  specialization is a topological mechanism that induces spontaneous synchronization in dynamical networks.   
 
 %The clusters created by specialization consist of vertices that both occupy the same relative position within their respective community and have, at least potentially, the same of dynamics. Because of this these vertices can be thought of as playing the same type of role within the network. This suggests that vertices in the same equitable partition or those vertices that synchronize in real-world networks may have the same role within their respective communities. Additionally, as each community is in fact different, the roles within them are also distinct meaning that each role in a newly specialized community is a specialized version of the original role. 
 
-Our original motivation for considering network specialization is that it results in a number of features consistent with those observed in real-world networks. Specifically, if a network is sequentially specialized it becomes increasingly real-world like so long as the sets over which it is specialized are chosen at random \cite{8}. Although we only formally describe how a single network specialization creates or maintains equitable partitions the results in this paper can also be used to describe how an equitable partition evolves over a sequence of specializations (see Theorems \ref{thm:coarse} and \ref{thm:part_conv}).
+Our original motivation for considering network specialization is that it results in a number of features consistent with those observed in real-world networks. Specifically, if a network is sequentially specialized it becomes increasingly real-world like so long as the sets over which it is specialized are chosen at random \cite{8}. Although we only formally describe how a single network specialization creates or maintains equitable partitions the results in this work can also be used to describe how an equitable partition evolves over a sequence of specializations (see Theorems \ref{thm:coarse} and \ref{thm:part_conv}).
 
-Last, we note that the model described in this paper is not a fully integrated model of the {dynamics on} and the {dynamics of} a network. As shown, specializing a dynamical network causes changes in the dynamics on the network but these dynamics are not the cause of network specialization. Currently, it is an open question as to whether a model can be devised where the set $S$ to be specialized is chosen using the dynamics of the network and specifically whether such a model could result in both a structure and dynamic consistent with observations of real-world networks.
+Last, we note that the model described in this work is not a fully integrated model of the {dynamics on} and the {dynamics of} a network. As shown, specializing a dynamical network causes changes in the dynamics on the network but these dynamics are not the cause of network specialization. Currently, it is an open question as to whether a model can be devised where the set $S$ to be specialized is chosen using the dynamics of the network and specifically whether such a model could result in both a structure and dynamic consistent with observations of real-world networks.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
